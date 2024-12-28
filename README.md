@@ -30,7 +30,7 @@ This is a full-stack MERN application designed to manage product transaction dat
 
 1. Clone the repository:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/ishangawande55/mern-stack-assignment-Roxiler
    cd mern-stack-challenge
 
 	2.	Install the required dependencies:
