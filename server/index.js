@@ -1,8 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const authRoutes = require("../server/routes/auth");
-const transactionRoutes = require("../server/routes/transactionRoutes");
 const mongoose=require("mongoose");
+require("dotenv").config();
+
+const initializeDbRoute = require("./routes/initializeDB");
+const transactionsRoute = require("./routes/transactions");
+const statisticsRoute = require("./routes/statistics");
+const barChartRoute = require("./routes/barChart");
+const pieChartRoute = require("./routes/pieChart");
+const combinedStatsRoute = require("./routes/combinedStats")
 
 const app = express();
 app.use(bodyParser.json());  // Middleware to parse JSON request bodies
@@ -14,8 +20,12 @@ mongoose
   .catch((err) => console.log(err));
 
 // API Routes
-app.use("/api/auth", authRoutes);  // For login
-app.use("/api/transactions", transactionRoutes);  // For transaction-related routes
+app.use("/api/transactions", initializeDbRoute);
+app.use("/api/transactions", transactionsRoute);
+app.use("/api/transactions", statisticsRoute);
+app.use("/api/transactions", barChartRoute);
+app.use("/api/transactions", pieChartRoute);
+app.use("/api/transactions", combinedStatsRoute);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
