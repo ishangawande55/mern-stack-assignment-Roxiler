@@ -33,7 +33,7 @@ router.get("/", async (req, res) => {
 
       filter.$or = dateConditions; // Match any date range condition
     } else {
-      // Default: Show all records from January 1, 2021 to the current date
+      // Default: To Show all records from January 1, 2021 to the current date
       const startDate = new Date(2021, 0, 1);
       const endDate = new Date();
       startDate.setHours(0, 0, 0, 0);
@@ -42,7 +42,7 @@ router.get("/", async (req, res) => {
       filter.dateOfSale = { $gte: startDate, $lte: endDate };
     }
 
-    // Add search condition if a search term is provided
+    // search condition if a search term is provided
     if (search) {
       filter.$or = [
         { title: { $regex: search, $options: "i" } },
@@ -54,7 +54,7 @@ router.get("/", async (req, res) => {
     const limit = parseInt(perPage, 10) || 10;
     const skip = (parseInt(page, 10) - 1) * limit;
 
-    // Query the database with filter, pagination, and sorting (if needed)
+    // To Query the database with filter, pagination, and sorting (if needed)
     const transactions = await Transaction.find(filter)
       .skip(skip)
       .limit(limit);

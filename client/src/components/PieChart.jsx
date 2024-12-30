@@ -58,7 +58,7 @@ const PieChart = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h1 className="text-3xl font-semibold text-center mb-6 text-gray-700">Transaction Pie Chart</h1>
+      <h1 className="text-5xl font-extrabold text-center text-black drop-shadow-lg tracking-wide mb-8 font-serif">Transaction Pie Chart</h1>
 
       {/* Month selection dropdown */}
       <div className="mb-4">

@@ -7,7 +7,7 @@ router.get("/combined-stats", async (req, res) => {
     try {
         const { month } = req.query;
 
-        // Ensure month is provided
+        // To Ensure month is provided
         if (!month) {
             return res.status(400).json({ error: "Month parameter is required" });
         }
@@ -30,7 +30,7 @@ router.get("/combined-stats", async (req, res) => {
 
         res.status(200).json(response);
     } catch (err) {
-        // Catch any errors from the external API calls
+        // To Catch any errors from the external API calls
         console.error(err.message); // Log the error for debugging
         res.status(500).json({ error: "Failed to fetch combined data. Please try again later." });
     }

@@ -72,7 +72,7 @@ const CombineResult = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6  bg-white rounded-lg shadow-md">
-      <h1 className="text-3xl font-semibold text-center mb-6 text-gray-700">Combined Stats Viewer</h1>
+      <h1 className="text-5xl font-extrabold text-center text-black drop-shadow-lg tracking-wide mb-8 font-serif">Combine Result Viewer</h1>
 
       <div className="mb-6">
         <label htmlFor="month" className="block text-lg font-semibold mb-2">

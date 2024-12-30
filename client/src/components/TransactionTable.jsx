@@ -27,7 +27,7 @@ const TransactionTable = () => {
 
   return (
     <div className="p-4 bg-white shadow rounded-lg">
-      <h1 className="text-2xl font-bold text-center mb-4">Transactions</h1>
+      <h1 className="text-5xl font-extrabold text-center text-black drop-shadow-lg tracking-wide mb-8 font-serif">Transactions</h1>
 
       {/* MonthDropdown component to select month */}
       <MonthDropdown selectedMonth={month} onChange={setMonth} />

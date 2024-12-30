@@ -13,7 +13,7 @@ const combinedStatsRoute = require("./routes/combinedStats")
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());  // Middleware to parse JSON request bodies
+app.use(bodyParser.json()); 
 
 // MongoDB Connection
 mongoose
