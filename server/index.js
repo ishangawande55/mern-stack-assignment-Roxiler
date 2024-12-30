@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose=require("mongoose");
 require("dotenv").config();
+const cors=require("cors")
 
 const initializeDbRoute = require("./routes/initializeDB");
 const transactionsRoute = require("./routes/transactions");
@@ -11,6 +12,7 @@ const pieChartRoute = require("./routes/pieChart");
 const combinedStatsRoute = require("./routes/combinedStats")
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());  // Middleware to parse JSON request bodies
 
 // MongoDB Connection
